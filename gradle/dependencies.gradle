@@ -1,0 +1,7 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter:$libSpringBootVersion"
+    compile "org.codehaus.groovy:groovy-all:$libGroovyVersion"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$libSpringBootVersion"
+    testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
+}

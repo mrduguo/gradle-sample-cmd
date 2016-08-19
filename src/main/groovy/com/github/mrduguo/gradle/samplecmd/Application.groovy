@@ -17,11 +17,7 @@ public class Application implements CommandLineRunner {
     def findTopHitUrls() {
         def urlCounts = [:]
         new URL(inputLogUrl).text.eachLine {
-            if (urlCounts.containsKey(it)) {
-                urlCounts.put(it, urlCounts[it] + 1)
-            } else {
-                urlCounts.put(it, 1)
-            }
+            urlCounts.put(it, urlCounts.containsKey(it) ? urlCounts[it] + 1 : 1)
         }
         urlCounts.sort { -it.value }.entrySet().collate(outputNumberOfUrls).first()
     }

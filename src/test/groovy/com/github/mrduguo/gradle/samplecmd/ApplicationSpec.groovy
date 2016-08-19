@@ -11,8 +11,12 @@ class ApplicationSpec extends Specification {
     Application application
 
     void "top url should be www.example.com"() {
-        expect:
-        application.findTopHitUrls().first().key == 'http://www.example.com'
+        when:
+        def topUrls = application.findTopHitUrls()
+
+        then:
+        topUrls.size() == 5
+        topUrls.first().key == 'http://www.example.com'
     }
 
 }
